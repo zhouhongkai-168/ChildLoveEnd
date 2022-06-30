@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width " />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+</head>
+    <body style="">
+        <h1 id="a1" style="position:absolute;left:300px"></h1>
+        <audio id="BGM" autoplay="autoplay" preload="auto" src="BGM.mp3"></audio>
+
+        <div style="opacity: 0.5;width: 500px; height: 500px" id="background">周泓恺制作</div>
+
+        <script>
+
+
+            document.getElementById("BGM").play();
+ 
+
+            text = ["陈, 当你看到这个消息时，我们已经毕业了"];
+            text[1] = "但我却无法忘记你"
+            text[2] = "那深深的友谊"
+            text[3] = "永久不散！"
+            text[4] = "陈，你知道Child是什么吗？"
+            text[5] = "那是纯真的童年啊！"
+            text[6] = "时光飞逝"
+            text[7] = "再也无法回来"
+            text[8] = "但却留下来美好的回忆"
+            text[9] = "感谢你，陪我走完我的童年，"
+            text[10] = "感谢你，在寂寞的时候陪我"
+            text[11] = "你就是我的神"
+            text[12] = "感谢你能玩到我这款游戏"
+            text[13] = "同时也感谢大家的游玩"
+            text[14] = "在此我把游戏献给所有有童心的人"
+            text[15] = "这里留下我童年的回忆"
+            text[16] = "在此，感谢从前帮助过我的人"
+            text[17] = "I Love YOU!"
+            text[18] = "end."
+
+            var p2 = [];
+
+            i = -1;
+            setInterval("clock()", 1000);
+            setInterval("move()", 900);
+            setInterval("set_Image()", 900);
+
+            function clock() {
+                i++;
+
+                if (i > 18) {
+                    return 0;
+                }
+
+                var p1 = document.createElement("h3");
+
+                p1.innerHTML = text[i];
+                p1.style.position = "absolute";
+                //p1.style.left = screen.width / 2 - (p1.innerHTML.length * 10);
+
+               // console.log(screen.width)
+                   //"500px"
+                //p1.style.align = "center"
+
+                var y = 10;
+
+                p1.style.top = (y + i * 70).toString() + 'px';
+                y = p1.style.top
+
+                //console.log(p1.style.top)
+
+                p2[i] = p1;
+
+                var a = document.body
+
+                a.appendChild(p1)
+
+
+            }
+            function move() {
+                for (var i1 = 0; i1 < p2.length; i1++) {
+                    var b = p2[i1].style.top;
+                    p2[i1].style.top = (parseInt(b.substr(0, b.length - 2)) - 10).toString() + 'px';
+                }
+            }
+
+            l = 0
+            function set_Image() {
+                l++;
+                document.getElementById("background").style.backgroundImage = "url(i" + l.toString() + ".jpg)";
+                document.getElementById("background").style.height = document.body.clientHeight;
+                document.getElementById("background").style.width = document.body.clientWidth;
+
+                console.log(document.body.style.height)
+                if (l > 9) {
+                    l = 0
+                }
+            }
+
+
+        </script>
+    </body>
+</html>
