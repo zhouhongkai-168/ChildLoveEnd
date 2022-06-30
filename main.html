@@ -2,6 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta charset="UTF-8">
+        <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width " />
     </head>
     <body style="">
         <h1 id="a1" style="position:absolute;left:300px"></h1>
@@ -53,7 +54,7 @@
 
                 p1.innerHTML = text[i];
                 p1.style.position = "absolute";
-                p1.style.left = "500px"
+               // p1.style.left = "500px"
 
                 var y = 10;
 
@@ -81,10 +82,10 @@
             function set_Image() {
                 l++;
                 document.getElementById("background").style.backgroundImage = "url(i" + l.toString() + ".jpg)";
-                document.getElementById("background").style.height = screen.height;
-                document.getElementById("background").style.width = screen.width;
+                document.getElementById("background").style.height = document.body.clientHeight;
+                document.getElementById("background").style.width = document.body.clientWidth;
 
-                console.log("i" + l.toString() + ".jpg")
+                //console.log("i" + l.toString() + ".jpg")
                 if (l > 9) {
                     l = 0
                 }
